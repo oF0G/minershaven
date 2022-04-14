@@ -50,21 +50,17 @@ end
 
 
         if Lay2 == false then
+            local a = 0
             L1()
-            wait(5)
-            remotePath.Rebirth:InvokeServer(unpack(args))
-            wait(5)
-            remotePath.Rebirth:InvokeServer(unpack(args))
-            wait(5)
-            remotePath.Rebirth:InvokeServer(unpack(args))
-            wait(5)
-            remotePath.Rebirth:InvokeServer(unpack(args))
-            wait(5)
-            remotePath.Rebirth:InvokeServer(unpack(args))
-            wait(5)
-            remotePath.Rebirth:InvokeServer(unpack(args))
-            wait(5)
+            while(a < 50)
+            do
+                remotePath.Rebirth:InvokeServer(unpack(args))
+                a = a+1
+                end
+            
+            
             local Lay2 = true
+            
         else
             remotePath.Rebirth:InvokeServer(unpack(args))
 
