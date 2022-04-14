@@ -1,0 +1,79 @@
+_G.autoRebirth = true;
+_G.autoLayout2 = true;
+_G.autoLayout1 = true;
+local remotePath = game:GetService("ReplicatedStorage")
+local Lay2 = true;
+
+function L2 ()
+    while _G.autoLayout2 == true do
+            local args = {
+                [1] = "Load",
+                [2] = "Layout2"
+            }
+
+            game:GetService("ReplicatedStorage").Layouts:InvokeServer(unpack(args))
+
+            
+        break
+    end
+end
+
+
+function L1()
+    while _G.autoLayout1 == true do
+
+        local args = {
+            [1] = "Load",
+            [2] = "Layout1"
+        }
+
+            game:GetService("ReplicatedStorage").Layouts:InvokeServer(unpack(args))
+
+            wait()
+        break
+    end
+end
+
+
+    while _G.autoRebirth == true do
+        local args = {
+            [1] = 26
+        }
+
+        remotePath.Rebirth:InvokeServer(unpack(args))
+
+        if Lay2 == true then
+            L2()
+            remotePath.Rebirth:InvokeServer(unpack(args))
+            wait(10)
+            local Lay2 = false
+
+
+        if Lay2 == false then
+            L1()
+            wait(5)
+            remotePath.Rebirth:InvokeServer(unpack(args))
+            wait(5)
+            remotePath.Rebirth:InvokeServer(unpack(args))
+            wait(5)
+            remotePath.Rebirth:InvokeServer(unpack(args))
+            wait(5)
+            remotePath.Rebirth:InvokeServer(unpack(args))
+            wait(5)
+            remotePath.Rebirth:InvokeServer(unpack(args))
+            wait(5)
+            remotePath.Rebirth:InvokeServer(unpack(args))
+            wait(5)
+            local Lay2 = true
+        else
+            remotePath.Rebirth:InvokeServer(unpack(args))
+
+
+
+
+
+
+
+        end
+    end
+end
