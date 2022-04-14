@@ -59,10 +59,11 @@ end
                 end
             
             
-            local Lay2 = true
+            
             
         else
-            remotePath.Rebirth:InvokeServer(unpack(args))
+            
+            local Lay2 = true
 
 
 
